@@ -14,7 +14,7 @@ async def send_to_telegram(message):
 def main():
     # 在 Render 環境中啟動 Chrome
     chrome_command = [
-        "chromium",
+        "/usr/bin/chromium",
         "--no-sandbox",
         "--headless",
         "--remote-debugging-port=9222",
