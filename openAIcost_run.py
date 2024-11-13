@@ -10,6 +10,7 @@ import time
 
 # 設定 Chrome 選項
 options = uc.ChromeOptions()
+options.binary_location = "/usr/bin/google-chrome-stable"  # 指定 Chrome 路徑
 options.add_argument('--no-sandbox')
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
@@ -17,8 +18,13 @@ options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--disable-blink-features=AutomationControlled')
 options.add_experimental_option("debuggerAddress", "localhost:9222")
 
-# 使用 undetected_chromedriver
-driver = uc.Chrome(options=options)
+# 使用 undetected_chromedriver，指定 driver 執行檔位置
+driver = uc.Chrome(
+    driver_executable_path='/usr/local/bin/chromedriver',
+    options=options
+)
+
+# 其餘代碼保持不變...
 
 try:
     # 打開目標網頁
