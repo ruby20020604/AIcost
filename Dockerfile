@@ -1,11 +1,3 @@
-# requirements.txt
-python-telegram-bot==20.8
-selenium==4.16.0
-pandas==2.1.4
-undetected-chromedriver==3.5.4
-async-timeout==4.0.3
-
-# Dockerfile
 FROM python:3.9
 
 # Install Chrome and required dependencies
